@@ -1,0 +1,11 @@
+# telling which version of composer we are going to use with those container
+version: '3'
+services:
+  redis-server: 
+    image: 'redis'
+  node-app:
+  # look at the current directory to build the image
+    restart: always
+    build: .
+    ports:
+      - "8081:8081"
